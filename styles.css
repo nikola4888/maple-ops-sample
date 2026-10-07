@@ -217,3 +217,29 @@ tr.empty td { height: 2.4rem; border-bottom-style: dashed; }
   .rail, .skip { display: none; }
   a { color: #000; }
 }
+/* Memos have no section rail, so they must not inherit the two-column grid. */
+.frame.single {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 46rem;
+}
+.frame.single main {
+  max-width: none;
+}
+.back {
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  margin: 1.5rem 0 0;
+}
+.foot.single {
+  padding-left: 1.25rem;
+}
+@media (min-width: 64rem) {
+  .frame.single {
+    grid-template-columns: minmax(0, 1fr);
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  .foot.single {
+    padding-left: 2.5rem;
+  }
+}
