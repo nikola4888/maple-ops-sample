@@ -217,29 +217,17 @@ tr.empty td { height: 2.4rem; border-bottom-style: dashed; }
   .rail, .skip { display: none; }
   a { color: #000; }
 }
-/* Memos have no section rail, so they must not inherit the two-column grid. */
-.frame.single {
-  grid-template-columns: minmax(0, 1fr);
-  max-width: 46rem;
-}
-.frame.single main {
-  max-width: none;
-}
-.back {
-  font-family: var(--sans);
-  font-size: 0.875rem;
-  margin: 1.5rem 0 0;
-}
-.foot.single {
-  padding-left: 1.25rem;
-}
+
+/* Memo pages: single column, no rail. */
 @media (min-width: 64rem) {
-  .frame.single {
-    grid-template-columns: minmax(0, 1fr);
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
-  .foot.single {
-    padding-left: 2.5rem;
-  }
+  .frame.single { grid-template-columns: minmax(0, 1fr); }
+  .frame.single main { margin: 0 auto; width: 100%; }
+  .foot.single { padding-left: 2.5rem; }
+  .foot.single > * { margin-left: auto; margin-right: auto; }
 }
+.back { font-family: var(--sans); font-size: 0.875rem; padding-top: 1.5rem; margin: 0; }
+.back a { color: var(--ink-soft); }
+.also { font-family: var(--sans); font-size: 0.95rem; color: var(--ink-soft); }
+.disclaim-all { font-family: var(--sans); font-size: 0.95rem; color: var(--ink-soft); max-width: var(--measure); margin: 0 0 0.6rem; }
+.masthead h1.long { font-size: clamp(2.4rem, 7vw, 4.2rem); line-height: 1.02; }
+.foot.single > *, .foot.single .src-head, .foot.single .sources, .foot.single .disclaim, .foot.single .disclaim-all { max-width: 40rem; width: 100%; }
